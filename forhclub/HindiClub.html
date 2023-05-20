@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hindi Club</title>
+  <style>
+    body {
+      font-family: Times New Roman;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+    h1 {
+      background-color: orange;
+      padding: 10px;
+      color: #fff;
+      margin: 0 auto;
+      font-size: 40px;
+    }
+
+    .category-list {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .category-list li {
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+
+    .category-link {
+      display: block;
+      padding: 10px;
+      background-color: #f1f1f1;
+      text-decoration: none;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .category-link:hover {
+      background-color: #ccc;
+    }
+
+    #content {
+      background-color: green;
+      color: #fff;
+      padding: 20px;
+      margin: 20px;
+      font-size: 20px;
+    }
+
+    #rngmtsv {
+      margin-top: 20px;
+    }
+
+    .hsb {
+      margin-top: 20px;
+    }
+
+    .team {
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function showContent(category) {
+      var contentDiv = document.getElementById("content");
+      if (!category || category === "") {
+        contentDiv.textContent = "Welcome";
+      }  else if (category === "a") {
+        contentDiv.innerHTML = "<p>The Hindi Club at VIT Bhopal University is dedicated to promoting the Hindi language and Indian culture on campus. We organize events such as movie nights, language workshops, and cultural festivals to give students the opportunity to explore and learn about the rich history and traditions of India. Our club is open to anyone interested in Hindi language and culture, regardless of background or proficiency level. Join us to meet new people, practice your language skills, and experience the vibrant culture of India right here on campus!</p><img class='team' src='team.png' alt='Our Team'>";
+      } else if (category === "b") {
+        contentDiv.innerHTML = "<p>One of the upcoming events the Hindi Club is organizing is the celebration of Holi, the Hindu festival of colors. The event will be held at VIT Bhopal and will feature traditional food, music, dance, and of course, lots of colors. This is an opportunity for students to experience the joy and energy of one of India's most vibrant festivals. Tickets start from Rupees 250/-. We hope to see you there!</p><img id='rngmtsv' src='rngmtsv1.png' alt='Rang Mahotsav'>";
+      } else if (category === "c") {
+        contentDiv.innerHTML = "Contact details<br><br>Faculty Co-ordinator: Dr. XYZ<br>President: Yuvraj Singh Rathore (XYZ)<br>Vice-President: Hritik Kumar (XYZ)";
+      } else if (category === "d") {
+        contentDiv.innerHTML = "<p>Some glimpses from Hindi Sabha.</p><img class='hsb' src='hsb1.png' alt='Image 1'><img class='hsb' src='hsb2.png' alt='Image 2'><img class='hsb' src='hsb3.png' alt='Image 3'>";
+      }
+    }
+
+    showContent("")
+  </script>
+</head>
+<body>
+  <h1>Hindi Club : VIT Bhopal</h1>
+  <ul class="category-list">
+    <li><a href="#" class="category-link" onclick="showContent('a')">About us</a></li>
+    <li><a href="#" class="category-link" onclick="showContent('b')">Announcements</a></li>
+    <li><a href="#" class="category-link" onclick="showContent('c')">Contact us</a></li>
+    <li><a href="#" class="category-link" onclick="showContent('d')">Events hosted</a></li>
+  </ul>
+  <div id="content"></div>
+</body>
+</html>
